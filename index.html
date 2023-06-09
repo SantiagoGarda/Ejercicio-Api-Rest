@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuarios</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- main container -->
+  <div class="contain">
+      <div class="header">
+          <h1>API REST</h1>
+          <p>Práctica de consumo de recursos a través de endpoints. Métodos GET, POST, PUT y DELETE.</p>
+          <p>Utilizamos el backend de prueba de <a href="https://mockapi.io" target="_blank">MockAPI</a></p>
+      </div>
+      <!-- modal modificar -->
+      <div>
+          <dialog id="modal">
+              <form action="" method="dialog" id="form">
+                  <div class="input-set">
+                      <div class="input-area">
+                          <label for="fullName">Nombre completo:
+                              <input type="text" id="nombre" name="nombreCompleto" required>
+                          </label>
+                          <div class="input-area">
+                              <label for="email">Correo Electrónico:
+                                  <input type="email" id="emails" name="emails" required>
+                              </label>
+                          </div>
+                          <div class="input-area">
+                              <label for="phone">Teléfono:
+                                  <input type="tel" id="telefono" name="telefono" required
+                                      pattern="^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$">
+                              </label>
+                          </div>
+                      </div>
+                      <div>
+                          <input class="input-btn" type="submit" value="Aceptar">
+                          <input class="input-btn" type="reset" value="Limpiar">
+                          <input class="input-btn" type="button" value="Cancelar" id="closeModal">
+                      </div>
+              </form>
+          </dialog>
+      </div>
+      <!-- agregar usuario -->
+      <div class="input-bar">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" />
+          <label for="email">Email:</label>
+          <input type="email" id="email" />
+          <label for="phone">Teléfono:</label>
+          <input type="tel" id="phone" />
+          <button onclick="createUser()">Agregar Usuario</button>
+      </div>
+      <div class="table">
+          <table>
+              <thead>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Email</th>
+                  <th>Teléfono</th>
+              </thead>
+              <tbody id="usersTable"></tbody>
+          </table>
+      </div>
+  </div>
+</body>
+
+</html>
